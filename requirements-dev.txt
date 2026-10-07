@@ -1,0 +1,2 @@
+# Python data-preparation source formatting and linting.
+ruff==0.16.10

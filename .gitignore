@@ -3,3 +3,7 @@ test-results/
 playwright-report/
 .DS_Store
 .qa/
+
+__pycache__/
+.ruff_cache/
+.venv/

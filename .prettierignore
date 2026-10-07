@@ -1,0 +1,7 @@
+node_modules/
+.qa/
+test-results/
+playwright-report/
+data/*.json
+assets/
+package-lock.json
