@@ -21,9 +21,10 @@ jobs:
       - uses: actions/configure-pages@v5
       - name: Stage public website assets
         run: |
-          mkdir -p _site/data
-          cp index.html style.css app.js terrain.js favicon.svg _site/
+          mkdir -p _site/data _site/assets
+          cp index.html style.css app.js terrain.js motion.js favicon.svg _site/
           cp data/*.json data/ATTRIBUTION.md _site/data/
+          cp assets/* _site/assets/
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

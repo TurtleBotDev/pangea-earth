@@ -18,18 +18,19 @@
 </header>
 <aside id="explorer" class="explorer" aria-label="Explore the globe">
 <div class="eyebrow"><span class="tiny-line"></span> EXPLORE DEEP TIME</div>
-<h1>One planet.<br>One supercontinent.</h1>
+<h1>Explore Pangea.</h1>
 <p class="intro">Step back 240 million years.<br>Discover a world joined together.</p>
 <div class="section-title">FIND A CONTINENT <span>07</span></div>
 <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search continents…" aria-label="Search continents"></label>
 <div id="places" class="places"></div>
 <div class="layer-section">
 <div class="section-title">MAP VIEW</div>
-<div class="layer-switch" role="group" aria-label="Map view"><button id="ancient-button" class="active" aria-pressed="true">Reconstruction</button><button id="modern-button" aria-pressed="false">Satellite today</button></div>
+<div class="layer-switch" role="group" aria-label="Map view"><button id="ancient-button" class="active" aria-pressed="true">Ancient geography</button><button id="modern-button" aria-pressed="false">Satellite today</button></div>
+<label class="check-row projection-toggle"><input id="project-satellite" type="checkbox"><span>Project modern satellite imagery</span></label>
 <label class="check-row"><input id="grid-toggle" type="checkbox"><span>Latitude & longitude grid</span></label>
 <label class="check-row"><input id="labels-toggle" type="checkbox" checked><span>Continent labels</span></label>
 </div>
-<div class="data-note"><span class="note-icon" aria-hidden="true">◇</span><p id="data-note">Model-based continental positions.<br>Surface texture is illustrative.</p></div>
+<div class="data-note"><span class="note-icon" aria-hidden="true">◇</span><p id="data-note">PALEOMAP ancient geography.<br>Regional estimates · limited local detail.</p></div>
 </aside>
 <button id="panel-toggle" class="mobile-toggle" aria-label="Toggle exploration panel" aria-expanded="false">☰ Explore</button>
 <div class="globe-heading"><span class="eyebrow" id="era-label">MIDDLE TRIASSIC</span><div><span id="age-hero">240</span><span class="age-unit">million years ago</span></div></div>
@@ -44,15 +45,27 @@
 <div class="map-instructions">Drag to explore <span>·</span> Scroll to zoom <span>·</span> Right-drag to tilt</div>
 <footer class="timeline">
 <div class="time-title"><span class="eyebrow">TIME MACHINE</span><span id="timeline-title">The age of Pangea</span></div>
-<div class="time-track"><div class="track-line"></div><div id="time-buttons"></div></div>
+<div class="time-track">
+<div class="playback-controls" role="group" aria-label="Continental motion playback">
+<button id="time-play" class="play-button" aria-label="Play continental motion" aria-pressed="false">▶ Play</button>
+<button id="time-direction" aria-label="Change playback direction" title="Change playback direction">Toward today</button>
+<label class="speed-label">Speed <select id="time-speed" aria-label="Playback speed"><option value="5">0.5×</option><option value="10" selected>1×</option><option value="20">2×</option></select></label>
+<span id="motion-note">Drag to watch continental drift</span>
+</div>
+<label class="scrubber-label" for="time-scrubber">Continental motion: 300 million years ago to today</label>
+<input id="time-scrubber" type="range" min="0" max="300" step="0.1" value="60" aria-label="Geological timeline" aria-valuetext="240 million years ago">
+<div id="time-buttons" role="group" aria-label="Detailed snapshot shortcuts"></div>
+</div>
 <div class="time-readout"><strong id="age-readout">240 <span>Ma</span></strong><span id="era-readout">Middle Triassic</span></div>
 </footer>
-<div class="map-meta"><span id="coordinate-readout">—</span><span id="altitude-readout">—</span><a href="https://gwsdoc.gplates.org/models/#muller2022" target="_blank" rel="noopener">GPlates · Müller et al. (2022)</a></div>
+<div class="map-meta"><span id="coordinate-readout">—</span><span id="altitude-readout">—</span><a id="source-credit" href="https://www.earthbyte.org/paleodem-resource-scotese-and-wright-2018/" target="_blank" rel="noopener">Scotese & Wright (2018) · PALEOMAP</a></div>
 <dialog id="about-dialog">
 <button id="close-about" class="dialog-close" aria-label="Close about the map">×</button><span class="eyebrow">A WINDOW INTO DEEP TIME</span><h2>Explore the evidence.<br>Imagine the landscape.</h2>
-<p>Pangea Earth combines a scientific plate reconstruction with an interactive globe. The six snapshots show continental positions from 300 million years ago to the present.</p>
-<h3>What is real?</h3><p>The continental outlines and location shortcuts come from the <a href="https://gwsdoc.gplates.org/models/#muller2022" target="_blank" rel="noopener">Müller et al. (2022) plate motion model</a>, reconstructed through GPlates. These are rotated modern coastline shapes, not a reconstruction of ancient shorelines or sea level. Different models can give different positions.</p>
-<h3>What is illustrative?</h3><p>The ancient surface is a procedurally shaded illustration. Its colors, ridges, and fine detail are not measured ancient terrain, vegetation, or satellite imagery. Zooming reveals the illustration in more detail, not additional geological evidence. The globe has a smooth surface, with no reconstructed elevation.</p>
+<p>Pangea Earth combines a scientific plate reconstruction with an interactive globe. The timeline lets you watch continental motion from 300 million years ago to the present. Drag the slider or press Play, choose a direction, and adjust the speed. The labeled age buttons open detailed snapshots.</p>
+<h3>What does ancient geography show?</h3><p>The labeled snapshots use <a href="https://www.earthbyte.org/paleodem-resource-scotese-and-wright-2018/" target="_blank" rel="noopener">Scotese & Wright (2018) PALEOMAP PaleoDEMs</a>: reconstructed estimates of ancient land, shallow seas, elevations, and ocean depths. Shorelines follow estimated sea level, rather than simply rotating today’s coastline. Colors and relief shading are rendered from the published elevations.</p><p>These are regional reconstructions. The displayed 0.2° grids were filtered and resampled from coarse data; that does not provide 22 km geological accuracy. Fine features, including Tasmania and connections around Australia, cannot be resolved precisely. This layer uses the PALEOMAP reference frame, while the drift animation uses Müller et al. (2022), so positions can differ when switching views.</p>
+<h3>How does playback work?</h3><p>Playback rotates simplified continental pieces using the same model’s finite rotations, sampled every 5 million years and smoothly interpolated between samples. It shows rigid continental motion, not a full simulation of oceanic crust creation, subduction, or continental deformation. Pieces appear or disappear according to their model validity ranges. Playback uses an overview surface; select a labeled snapshot to return to detailed zoom.</p>
+<h3>What is illustrative?</h3><p>The untextured drift view uses artistic surface shading on rotated modern continental outlines. It does not show ancient shorelines or vegetation. The ancient geography snapshots use estimated paleo-elevations for color and shading, but the 3D globe itself is smooth. Zooming cannot reveal detail absent from either dataset.</p>
+<h3>Can satellite imagery move with the continents?</h3><p>Enable <b>Project modern satellite imagery</b> to attach NASA’s modern Blue Marble imagery to each continental piece. The texture follows its model rotation smoothly. It is a visual projection of modern terrain and coastlines, not evidence of ancient vegetation, landforms, or shorelines.</p>
 <h3>Can I see satellite imagery?</h3><p>Choose <b>Satellite today</b> to see NASA’s Blue Marble imagery of modern Earth. These satellite-derived composites have a native resolution of about 500 meters. They cannot show Pangea: satellites did not exist 240 million years ago.</p>
 <h3>Controls</h3><p>Drag or swipe to rotate. Scroll or pinch to zoom. Right-drag to tilt. Use + / − for accessible zoom, N to face north, and ◎ to return to the whole planet.</p>
 <div class="sources"><a href="https://doi.org/10.5194/se-13-1127-2022" target="_blank" rel="noopener">Read the research</a><a href="https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-topography-bathymetry/" target="_blank" rel="noopener">NASA Blue Marble</a><a href="https://github.com/TurtleBotDev/pangea-earth" target="_blank" rel="noopener">Source code</a></div>

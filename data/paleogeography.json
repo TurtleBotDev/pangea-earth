@@ -1,0 +1,45 @@
+{
+  "source": "Scotese & Wright (2018) PALEOMAP PaleoDEMs",
+  "license": "CC BY 4.0",
+  "url": "https://www.earthbyte.org/paleodem-resource-scotese-and-wright-2018/",
+  "gridSpacingDegrees": 0.2,
+  "limitations": "Published 0.2-degree grids are filtered/resampled from coarse regional reconstructions; file history applies a 400 km Gaussian filter. Grid spacing is not geological accuracy. Shorelines are estimated zero-elevation contours, not precise local reconstructions.",
+  "ages": {
+    "0": {
+      "file": "paleoDEM_0.2Deg_grids/Map01_PALEOMAP_1deg_Holocene_0Ma.nc",
+      "width": 1801,
+      "height": 901,
+      "processingHistory": "grdfilter Map01_PALEOMAP_1deg_Holocene_0Ma.nc -G./filtered/Map01_PALEOMAP_1deg_Holocene_0Ma.nc -Fg400 -D4 -Vl -I0.2"
+    },
+    "160": {
+      "file": "paleoDEM_0.2Deg_grids/Map35_PALEOMAP_1deg_Late_Jurassic_160Ma.nc",
+      "width": 1801,
+      "height": 901,
+      "processingHistory": "grdfilter Map35_PALEOMAP_1deg_Late_Jurassic_160Ma.nc -G./filtered/Map35_PALEOMAP_1deg_Late_Jurassic_160Ma.nc -Fg400 -D4 -Vl -I0.2"
+    },
+    "200": {
+      "file": "paleoDEM_0.2Deg_grids/Map43_PALEOMAP_1deg_Late_Triassic_200Ma.nc",
+      "width": 1801,
+      "height": 901,
+      "processingHistory": "grdfilter Map43_PALEOMAP_1deg_Late_Triassic_200Ma.nc -G./filtered/Map43_PALEOMAP_1deg_Late_Triassic_200Ma.nc -Fg400 -D4 -Vl -I0.2"
+    },
+    "240": {
+      "file": "paleoDEM_0.2Deg_grids/Map47_PALEOMAP_1deg_Middle_Triassic_240Ma.nc",
+      "width": 1801,
+      "height": 901,
+      "processingHistory": "grdfilter Map47_PALEOMAP_1deg_Middle_Triassic_240Ma.nc -G./filtered/Map47_PALEOMAP_1deg_Middle_Triassic_240Ma.nc -Fg400 -D4 -Vl -I0.2"
+    },
+    "260": {
+      "file": "paleoDEM_0.2Deg_grids/Map51_PALEOMAP_1deg_Middle_Permian_260Ma.nc",
+      "width": 1801,
+      "height": 901,
+      "processingHistory": "grdfilter Map51_PALEOMAP_1deg_Middle_Permian_260Ma.nc -G./filtered/Map51_PALEOMAP_1deg_Middle_Permian_260Ma.nc -Fg400 -D4 -Vl -I0.2"
+    },
+    "300": {
+      "file": "paleoDEM_0.2Deg_grids/Map57_PALEOMAP_1deg_Late_Pennsylvanian_300Ma.nc",
+      "width": 1801,
+      "height": 901,
+      "processingHistory": "grdfilter Map57_PALEOMAP_1deg_Late_Pennsylvanian_300Ma.nc -G./filtered/Map57_PALEOMAP_1deg_Late_Pennsylvanian_300Ma.nc -Fg400 -D4 -Vl -I0.2"
+    }
+  }
+}

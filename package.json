@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "python3 -m http.server 4173",
     "test": "playwright test",
-    "check": "node --check app.js && node --check terrain.js"
+    "check": "node --check app.js && node --check terrain.js && node --check motion.js"
   },
   "keywords": [],
   "author": "",

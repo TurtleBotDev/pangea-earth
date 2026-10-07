@@ -21,5 +21,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 External datasets, libraries, imagery, and fonts retain their own licenses.
-The scientific reconstruction files in data/ are attributed separately in
+The scientific reconstruction files in data/ and paleo-geography assets in assets/ are attributed separately in
  data/ATTRIBUTION.md and are not relicensed under MIT.
